@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>Opten.Web.Mvc</id>
+		<version></version>
+		<title>Opten.Web.Mvc</title>
+		<authors>OPTEN AG</authors>
+		<owners>OPTEN AG</owners>
+		<projectUrl>https://bitbucket.org/opten/opten-solutions</projectUrl>
+		<description><![CDATA[OPTEN MVC Library]]></description>
+		<iconUrl>http://www.opten.ch/nuget/logo.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<releaseNotes></releaseNotes>
+		<tags>opten</tags>
+		<dependencies>
+			<dependency id="Opten.Common" version="src\Opten.Web.Mvc\packages.config" />
+			<dependency id="Opten.Web.Infrastructure" version="Get-Last-NuGet-Version" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="src\Opten.Web.Mvc\bin\Release\Opten.Web.Mvc.dll" target="lib\net45" />
+		<file src="src\Opten.Web.Mvc\bin\Release\Opten.Web.Mvc.pdb" target="lib\net45" />
+		<file src="src\Opten.Web.Mvc\bin\Release\Opten.Web.Mvc.xml" target="lib\net45" />
+	</files>
+</package>
