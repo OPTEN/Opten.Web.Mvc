@@ -14,7 +14,7 @@
 		<tags>opten</tags>
 		<dependencies>
 			<dependency id="Opten.Common" version="src\Opten.Web.Mvc\packages.config" />
-			<dependency id="Opten.Web.Infrastructure" version="Get-Last-NuGet-Version" />
+			<dependency id="Opten.Web.Infrastructure" version="src\Opten.Web.Mvc\packages.config" />
 		</dependencies>
 	</metadata>
 	<files>
