@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+</head>
+<body>	
+	@{
+		Opten.Web.Infrastructure.Mail.RazorViewMailer mailer = new Opten.Web.Infrastructure.Mail.RazorViewMailer(
+			from: "test@opten.ch",
+			displayName: "test@opten.ch",
+			to: "cf@opten.ch");
+
+		mailer.SendFromWebConfigSettings(
+			subject: "Test",
+			viewName: "Test",
+			model: new Opten.Web.Mvc.Integration.Test.Models.Member
+			{
+				FullName = "Calvin Frei",
+				Age = 24
+			});
+
+		mailer.SendFromWebConfigSettings(
+			subject: "Test",
+			viewName: "~/Views/TestMailInViewsFolder.cshtml",
+			model: new
+			{
+				Test1 = "Test1",
+				Test2 = "Test2"
+			});
+	}
+
+	@RenderBody()
+</body>
+</html>
