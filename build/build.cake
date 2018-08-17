@@ -1,5 +1,7 @@
 ﻿#tool "nuget:?package=NUnit.ConsoleRunner"
 #tool "nuget:?package=NUnit.Extension.NUnitV2ResultWriter"
+#addin "Cake.Git"
+#addin "Cake.FileHelpers"
 #addin "nuget:http://nuget.oss-concept.ch/nuget/?package=Opten.Cake"
 
 var target = Argument("target", "Default");
@@ -78,9 +80,13 @@ Task("Run-Unit-Tests")
 
 	//TODO: Why not csproj?
 	NUnit3("../tests/Opten.Web.Mvc.Test/bin/Release/Opten.Web.Mvc.Test.dll", new NUnit3Settings {
-		Results = results + File("Opten.Web.Mvc.Test.xml"),
-		Configuration = "Release",
-		ResultFormat = "nunit2" // Wait until Bamboo 5.14 is out to support NUnit 3!
+		Results = new[] {
+			new NUnit3Result {
+				FileName = results + File("Opten.Web.Mvc.Test.xml"),
+				Format = "nunit2" // Wait until Bamboo 5.14 is out to support NUnit 3!
+			}
+		},
+		Configuration = "Release"
 	});
 });
 
