@@ -7,28 +7,34 @@
 </head>
 <body>	
 	@{
-		Opten.Web.Infrastructure.Mail.RazorViewMailer mailer = new Opten.Web.Infrastructure.Mail.RazorViewMailer(
+		Opten.Web.Infrastructure.Mail.SimpleMailer mailer = new Opten.Web.Infrastructure.Mail.SimpleMailer(
 			from: "test@opten.ch",
 			displayName: "test@opten.ch",
-			to: "cf@opten.ch");
+			to: "cf@opten.ch")
+		{
+			IsBodyHtml = true
+		};
 
-		mailer.SendFromWebConfigSettings(
-			subject: "Test",
+		Opten.Web.Mvc.Render.IRenderer renderer1 = new Opten.Web.Mvc.Render.RazorViewRenderer(
 			viewName: "Test",
 			model: new Opten.Web.Mvc.Integration.Test.Models.Member
 			{
 				FullName = "Calvin Frei",
 				Age = 24
-			});
+			}
+		);
 
-		mailer.SendFromWebConfigSettings(
-			subject: "Test",
+		Opten.Web.Mvc.Render.IRenderer renderer2 = new Opten.Web.Mvc.Render.RazorViewRenderer(
 			viewName: "~/Views/TestMailInViewsFolder.cshtml",
 			model: new
 			{
 				Test1 = "Test1",
 				Test2 = "Test2"
-			});
+			}
+		);
+
+		mailer.SendFromWebConfigSettings(subject: "Test renderer1", message: renderer1.ToString());
+		mailer.SendFromWebConfigSettings(subject: "Test renderer2", message: renderer2.ToString());
 	}
 
 	@RenderBody()

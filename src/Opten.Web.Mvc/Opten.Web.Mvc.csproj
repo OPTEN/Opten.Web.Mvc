@@ -42,9 +42,6 @@
     <Reference Include="Opten.Common, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Opten.Common.2.2.0\lib\net45\Opten.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Opten.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Opten.Web.Infrastructure.2.0.0\lib\net45\Opten.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -85,11 +82,10 @@
     <Compile Include="Attributes\RequiredIfAttribute.cs" />
     <Compile Include="Attributes\VarnishCacheOutputAttribute.cs" />
     <Compile Include="Binders\CurrencyDecimalBinder.cs" />
-    <Compile Include="BootstrapHelper.cs" />
-    <Compile Include="BootstrapInputHelper.cs" />
     <Compile Include="BootstrapMessageHelper.cs" />
     <Compile Include="BootstrapValidationHelper.cs" />
-    <Compile Include="Mail\RazorViewMailer.cs" />
+    <Compile Include="Render\IRenderer.cs" />
+    <Compile Include="Render\RazorViewRenderer.cs" />
     <Compile Include="MvcHtmlHelper.cs" />
     <Compile Include="MvcUrlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
