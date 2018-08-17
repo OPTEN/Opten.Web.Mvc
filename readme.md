@@ -20,16 +20,12 @@ And a CurrencyDecimalBinder to parse strings (Html.TextBoxFor()) like 1'000 or 2
 
     ModelBinders.Binders.Add(typeof(decimal), new CurrencyDecimalBinder());
     ModelBinders.Binders.Add(typeof(decimal?), new CurrencyDecimalBinder());
+	
 
+## IRenderer
 
-### Validation w/ ModelState
-
-	ModelStateMvcValidator validator = new ModelStateMvcValidator<Vehicle>(modelState: modelState);
-
-	validator.IgnoreProperty(v => v.Id);
-
-	validtor.IsValid();
-
+RazorViewRenderer converts a .cshtml and model to a string which can be used to send it as an e-mail body or anything else :-)!
+	
 
 ## URL Helpers
 
