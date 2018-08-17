@@ -1,8 +1,5 @@
 ﻿#tool "nuget:?package=NUnit.ConsoleRunner"
 #tool "nuget:?package=NUnit.Extension.NUnitV2ResultWriter"
-#tool "docfx.msbuild"
-#addin "Cake.DocFx"
-#addin "Cake.FileHelpers"
 #addin "nuget:http://nuget.oss-concept.ch/nuget/?package=Opten.Cake"
 
 var target = Argument("target", "Default");
@@ -11,7 +8,6 @@ string feedUrl = "https://www.nuget.org/api/v2/package";
 string version = null;
 
 var dest = Directory("./artifacts");
-var docs = Directory(@"D:\inetpub\wwwroot\docs\apidocs");
 
 // Cleanup
 
@@ -36,7 +32,7 @@ Task("Version")
 		CreateDirectory(dest);
 	}
 
-	version = "1.0.1.4";
+	version = GitDescribe("../", false, GitDescribeStrategy.Tags, 0);
 
 	PatchAssemblyInfo("../src/Opten.Web.Mvc/Properties/AssemblyInfo.cs", version);
 	FileWriteText(dest + File("Opten.Web.Mvc.variables.txt"), "version=" + version);
@@ -99,21 +95,6 @@ Task("Pack")
 	}, feedUrl);
 });
 
-// Others
-
-Task("Docs")
-	.IsDependentOn("Pack")
-	.Does(() =>
-{
-	if (DirectoryExists(docs))
-	{
-		CleanDirectory(docs + Directory("_site"));
-		DeleteDirectory(docs + Directory("_site"), recursive: true);
-
-		DocFx(docs + File("docfx.json"));
-	}
-});
-
 
 // Deploying
 
@@ -147,6 +128,6 @@ Task("Deploy")
 });
 
 Task("Default")
-	.IsDependentOn("Docs");
+	.IsDependentOn("Pack");
 
 RunTarget(target);

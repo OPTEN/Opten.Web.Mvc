@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\RegexEmailAddressAttribute.cs" />
+    <Compile Include="Attributes\RequiredIfAttribute.cs" />
     <Compile Include="Attributes\VarnishCacheOutputAttribute.cs" />
     <Compile Include="Binders\CurrencyDecimalBinder.cs" />
     <Compile Include="BootstrapHelper.cs" />
