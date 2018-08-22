@@ -2,13 +2,6 @@
 
 Our OPTEN MVC Library
 
-
-## Attributes
-
-To validate (jquery.validation) an E-Mail correctly you should use ```[RegexEmailAddress]``` on the property.
-
-Varnish Attribute see: https://bitbucket.org/opten/opten-solutions/src/master/src/Opten.Web.Infrastructure/#markdown-header-varnish
-
 ## Binders
 
 There is a SwissDateTimeBinder to parse a swiss date to a C# DateTime.

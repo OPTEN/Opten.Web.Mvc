@@ -7,7 +7,7 @@ namespace Opten.Web.Mvc
 	/// <summary>
 	/// The MVC Url Helper.
 	/// </summary>
-	public static class MvcUrlHelper
+	public static class UrlHelperExtensions
 	{
 
 		/// <summary>

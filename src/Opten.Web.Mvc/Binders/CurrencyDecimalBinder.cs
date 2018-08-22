@@ -7,7 +7,7 @@ namespace Opten.Web.Mvc.Binders
 	/// <summary>
 	/// Converts an input value to a decimal.
 	/// </summary>
-	/// <seealso cref="System.Web.Http.ModelBinding.IModelBinder" />
+	/// <seealso cref="System.Web.Mvc.IModelBinder" />
 	/// <seealso cref="IModelBinder" />
 	public class CurrencyDecimalBinder : IModelBinder
 	{

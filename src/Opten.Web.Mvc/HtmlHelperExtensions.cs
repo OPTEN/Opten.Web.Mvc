@@ -7,7 +7,7 @@ namespace Opten.Web.Mvc
 	/// <summary>
 	/// The MVC HTML Helper.
 	/// </summary>
-	public static class MvcHtmlHelper
+	public static class HtmlHelperExtensions
 	{
 
 #pragma warning disable 1591
