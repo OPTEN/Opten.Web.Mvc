@@ -81,7 +81,9 @@
     <Compile Include="Attributes\RegexEmailAddressAttribute.cs" />
     <Compile Include="Attributes\RequiredIfAttribute.cs" />
     <Compile Include="Attributes\VarnishCacheOutputAttribute.cs" />
+    <Compile Include="Binders\ArrayBinderAttribute.cs" />
     <Compile Include="Binders\CurrencyDecimalBinder.cs" />
+    <Compile Include="Binders\UrlDateBinderAttribute.cs" />
     <Compile Include="BootstrapMessageHelper.cs" />
     <Compile Include="BootstrapValidationHelper.cs" />
     <Compile Include="Render\IRenderer.cs" />
