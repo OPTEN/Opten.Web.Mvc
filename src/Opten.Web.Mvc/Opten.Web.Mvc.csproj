@@ -86,6 +86,7 @@
     <Compile Include="Binders\UrlDateBinderAttribute.cs" />
     <Compile Include="BootstrapMessageHelper.cs" />
     <Compile Include="BootstrapValidationHelper.cs" />
+    <Compile Include="Http\InMemoryMultipartFormDataStreamProvider.cs" />
     <Compile Include="Render\IRenderer.cs" />
     <Compile Include="Render\RazorViewRenderer.cs" />
     <Compile Include="MvcHtmlHelper.cs" />
