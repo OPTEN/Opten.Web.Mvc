@@ -121,8 +121,9 @@ namespace Opten.Web.Mvc.Render
 			public RazorViewRendererEngine()
 			{
 				this.ViewLocationFormats = new[]
-				{
-					"~/Views/{1}/{0}.cshtml",
+                {
+                    "~/Views/{0}.cshtml",
+                    "~/Views/{1}/{0}.cshtml",
 					"~/Views/Shared/{1}/{0}.cshtml",
 					"~/Views/Shared/MailTemplate/{0}.cshtml",
 					"~/Views/MailTemplate/{0}.cshtml",
